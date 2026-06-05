@@ -5,7 +5,6 @@ import { JobDetails } from './pages/job-details/job-details';
 
 export const routes = [
   { path: '', component: Home },
-  { path: '', component: Jobs },
   { path: 'jobs', component: Jobs },
   { path: 'job/:id', component: JobDetails }
 ];
