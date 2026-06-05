@@ -1,0 +1,67 @@
+<div class="jobs-page">
+
+  <div class="header">
+    <h1>🚀 Explore Opportunities</h1>
+    <p>Find your next career move from top companies.</p>
+  </div>
+
+  <div class="filter-container">
+
+    <input type="text" placeholder="🔍 Search jobs..." [(ngModel)]="searchText" (input)="filterJobs()" />
+
+    <select [(ngModel)]="selectedLocation" (change)="filterJobs()">
+
+      <option value="">
+        All Locations
+      </option>
+
+      <option value="Bangalore">
+        Bangalore
+      </option>
+
+      <option value="Hyderabad">
+        Hyderabad
+      </option>
+
+      <option value="Chennai">
+        Chennai
+      </option>
+
+    </select>
+  </div>
+
+  <div class="jobs-grid">
+    <div class="job-card" *ngFor="let job of jobs">
+      <div class="badge">New</div>
+
+      <h2>{{ job.title }}</h2>
+
+      <p class="company">
+        🏢 {{ job.company }}
+      </p>
+      <p>
+        📍 {{ job.location }}
+      </p>
+      <p>
+        💰 {{ job.salary }}
+      </p>
+      <p>
+        🧑‍💻 {{ job.experience }}
+      </p>
+      <p>
+        💼 {{ job.type }}
+      </p>
+
+      <div class="skills">
+        <span *ngFor="let skill of job.skills">
+          {{ skill }}
+        </span>
+      </div>
+
+      <button [routerLink]="['/job', job.id]">
+        View Details →
+      </button>
+
+    </div>
+  </div>
+</div>

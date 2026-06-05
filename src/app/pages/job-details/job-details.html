@@ -1,0 +1,36 @@
+<div class="job-container" *ngIf="job">
+    <a routerLink="/jobs" class="back-btn">
+        ← Back to Jobs
+    </a>
+    <div class="job-card">
+        <span class="badge">New Opportunity</span>
+        <h1>{{ job.title }}</h1>
+        <p class="company">
+            🏢 {{ job.company }}
+        </p>
+
+        <div class="details">
+            <p>
+                📍 <strong>Location:</strong>
+                {{ job.location }}
+            </p>
+            <p>
+                💰 <strong>Salary:</strong>
+                {{ job.salary }}
+            </p>
+        </div>
+
+        <div class="description">
+            <h3>Job Description</h3>
+            <p>
+                {{ job.description }}
+            </p>
+        </div>
+
+        <button class="apply-btn" (click)="applyJob()">
+            Apply Now
+        </button>
+
+    </div>
+
+</div>
